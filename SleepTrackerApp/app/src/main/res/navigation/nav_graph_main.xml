@@ -3,10 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_main"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/landingFragment">
 
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.sleeptracker.MainActivity"
         android:label="MainActivity" />
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.example.sleeptracker.LandingFragment"
+        android:label="fragment_landing"
+        tools:layout="@layout/fragment_landing" />
+    <fragment android:id="@+id/Records" />
+    <fragment android:id="@+id/Sleeping" />
+    <fragment android:id="@+id/Rating" />
 </navigation>
