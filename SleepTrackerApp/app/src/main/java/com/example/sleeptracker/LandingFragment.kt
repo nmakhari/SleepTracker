@@ -5,25 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import com.example.sleeptracker.databinding.FragmentLandingBinding
+import timber.log.Timber
 
 
 class LandingFragment : Fragment() {
+
+    private lateinit var FragmentLandingbinding: FragmentLandingBinding
+
+    companion object {
+        // TODO: Create new instance with factory method
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_landing, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        // TODO: if this method of fetching the layout works, delete the commented line below
+        // val view = inflater.inflate(R.layout.fragment_landing, container, false)
+
+        // Fetch the binding then use the root element of said binding to return the required view
+        FragmentLandingbinding = FragmentLandingBinding.inflate(layoutInflater)
+        val view = FragmentLandingbinding.root
+        setButtonClickListeners()
+        return view
     }
 
-    companion object {
-        // TODO: Create new instance with factory method
+    private fun setButtonClickListeners() {
+        FragmentLandingbinding.sleepButton.setOnClickListener {
+            // TODO: add navigation action here
+            Timber.d("Sleep button clicked")
+        }
+
+
+        FragmentLandingbinding.recordsButton.setOnClickListener {
+            // TODO: add navigation action here
+            Timber.d("Records button clicked")
+        }
     }
 }
