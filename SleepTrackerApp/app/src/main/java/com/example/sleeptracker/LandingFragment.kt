@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import com.example.sleeptracker.databinding.FragmentLandingBinding
 import timber.log.Timber
 
@@ -12,6 +15,7 @@ import timber.log.Timber
 class LandingFragment : Fragment() {
 
     private lateinit var FragmentLandingbinding: FragmentLandingBinding
+    private lateinit var viewModel: LandingFragmentViewModel
 
     companion object {
         // TODO: Create new instance with factory method
@@ -30,6 +34,9 @@ class LandingFragment : Fragment() {
         FragmentLandingbinding = FragmentLandingBinding.inflate(layoutInflater)
         val view = FragmentLandingbinding.root
         setButtonClickListeners()
+
+        // Create and store the viewModel through viewModelProvider
+        viewModel = ViewModelProvider(this).get(LandingFragmentViewModel::class.java)
         return view
     }
 
