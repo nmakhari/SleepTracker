@@ -20,5 +20,12 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.sleeptracker.WelcomeFragment"
-        android:label="WelcomeFragment" />
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_landingFragment"
+            app:destination="@id/landingFragment"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>

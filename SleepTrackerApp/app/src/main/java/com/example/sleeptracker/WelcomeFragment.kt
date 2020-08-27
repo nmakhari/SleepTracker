@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.sleeptracker.databinding.FragmentWelcomeBinding
 import timber.log.Timber
 
@@ -30,6 +31,7 @@ class WelcomeFragment : Fragment() {
     private fun setClickListener() {
         FragmentWelcomebinding.weclomeButton.setOnClickListener {
             Timber.d("Let's Sleep button clicked")
+            this.findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToLandingFragment())
         }
     }
 }
