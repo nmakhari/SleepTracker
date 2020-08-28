@@ -10,7 +10,6 @@
         android:name="com.example.sleeptracker.MainActivity"
         android:label="MainActivity" />
     <fragment android:id="@+id/Records" />
-    <fragment android:id="@+id/Rating" />
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.sleeptracker.WelcomeFragment"
@@ -23,5 +22,14 @@
         android:id="@+id/sleepingFragment"
         android:name="com.example.sleeptracker.SleepingFragment"
         android:label="fragment_sleeping"
-        tools:layout="@layout/fragment_sleeping" />
+        tools:layout="@layout/fragment_sleeping" >
+        <action
+            android:id="@+id/action_sleepingFragment_to_ratingFragment"
+            app:destination="@id/ratingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ratingFragment"
+        android:name="com.example.sleeptracker.RatingFragment"
+        android:label="fragment_rating"
+        tools:layout="@layout/fragment_rating" />
 </navigation>

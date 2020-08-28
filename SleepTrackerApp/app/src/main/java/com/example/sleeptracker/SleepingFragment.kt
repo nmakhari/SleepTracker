@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.sleeptracker.databinding.FragmentSleepingBinding
 import timber.log.Timber
 
@@ -21,15 +22,16 @@ class SleepingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         FragmentSleepingbinding = FragmentSleepingBinding.inflate(layoutInflater)
-        val view = FragmentSleepingbinding.root
-        setClickListeners()
-
         // Create and store the viewModel through viewModelProvider
         viewModel = ViewModelProvider(this).get(SleepingFragmentViewModel::class.java)
-        return view
+        setClickListeners()
+        return FragmentSleepingbinding.root
     }
 
     private fun setClickListeners() {
-        // TODO: set this up
+        FragmentSleepingbinding.stopSleepingButton.setOnClickListener {
+            Timber.d("Wake button clicked")
+            this.findNavController().navigate(SleepingFragmentDirections.actionSleepingFragmentToRatingFragment())
+        }
     }
 }

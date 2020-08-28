@@ -7,4 +7,5 @@
     <dimen name="small_button_text">16sp</dimen>
     <dimen name="medium_text_size">20sp</dimen>
     <dimen name="large_text_size">40sp</dimen>
+    <dimen name="sun_height">200dp</dimen>
 </resources>
