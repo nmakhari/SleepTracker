@@ -13,10 +13,6 @@ class WelcomeFragment : Fragment() {
 
     private lateinit var FragmentWelcomebinding: FragmentWelcomeBinding
 
-    companion object {
-        // TODO: Create an instance here
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -29,9 +25,13 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun setClickListener() {
-        FragmentWelcomebinding.weclomeButton.setOnClickListener {
+        FragmentWelcomebinding.sleepButton.setOnClickListener {
             Timber.d("Let's Sleep button clicked")
-            this.findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToLandingFragment())
+            this.findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToSleepingFragment())
+        }
+
+        FragmentWelcomebinding.recordsButton.setOnClickListener {
+            Timber.d("View records button clicked")
         }
     }
 }

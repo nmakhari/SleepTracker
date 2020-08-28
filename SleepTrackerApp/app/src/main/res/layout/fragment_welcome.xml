@@ -20,16 +20,30 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/weclome_button"
+            android:id="@+id/sleep_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/moon"
-            app:layout_constraintBottom_toTopOf="@id/sleeping_android"
+            app:layout_constraintBottom_toTopOf="@id/records_button"
             android:text="@string/lets_sleep"
             android:textAllCaps="false"
             android:textSize="@dimen/large_button_text"
+            android:paddingHorizontal="@dimen/medium_padding"
+            android:paddingVertical="@dimen/small_padding" />
+
+        <Button
+            android:id="@+id/records_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sleep_button"
+            app:layout_constraintBottom_toTopOf="@id/sleeping_android"
+            android:text="@string/view_records"
+            android:textAllCaps="false"
+            android:textSize="@dimen/small_button_text"
             android:paddingHorizontal="@dimen/medium_padding"
             android:paddingVertical="@dimen/small_padding" />
 

@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lets_sleep">Let\'s Sleep!</string>
+    <string name="view_records">View Records</string>
+    <string name="wake">Wake</string>
+    <string name="your_sleep">Your Sleep:</string>
+    <string name="sleep_start_time">Sleep start time:</string>
+    <string name="current_sleep_duration">Current Sleep Duration:</string>
 </resources>

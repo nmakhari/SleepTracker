@@ -9,23 +9,19 @@
         android:id="@+id/mainActivity"
         android:name="com.example.sleeptracker.MainActivity"
         android:label="MainActivity" />
-    <fragment
-        android:id="@+id/landingFragment"
-        android:name="com.example.sleeptracker.LandingFragment"
-        android:label="fragment_landing"
-        tools:layout="@layout/fragment_landing" />
     <fragment android:id="@+id/Records" />
-    <fragment android:id="@+id/Sleeping" />
     <fragment android:id="@+id/Rating" />
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.sleeptracker.WelcomeFragment"
         android:label="WelcomeFragment" >
         <action
-            android:id="@+id/action_welcomeFragment_to_landingFragment"
-            app:destination="@id/landingFragment"
-            app:exitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@id/welcomeFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_welcomeFragment_to_sleepingFragment"
+            app:destination="@id/sleepingFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/sleepingFragment"
+        android:name="com.example.sleeptracker.SleepingFragment"
+        android:label="fragment_sleeping"
+        tools:layout="@layout/fragment_sleeping" />
 </navigation>
