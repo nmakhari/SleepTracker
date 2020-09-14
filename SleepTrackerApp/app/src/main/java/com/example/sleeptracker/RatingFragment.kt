@@ -23,10 +23,11 @@ class RatingFragment : Fragment() {
         FragmentRatingbinding = FragmentRatingBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(RatingFragmentViewModel::class.java)
         setClickListeners()
-
+        // automatically update the selectedRating when the LiveData changes
         viewModel.currentRatingImage.observe(viewLifecycleOwner, Observer { newRating ->
             FragmentRatingbinding.selectedRating.setImageResource(newRating)
         })
+
         return FragmentRatingbinding.root
     }
 
@@ -38,17 +39,17 @@ class RatingFragment : Fragment() {
         // TODO: Refactor these listeners into the view itself
         FragmentRatingbinding.goodRating.setOnClickListener{
             Timber.d("Good rating selected")
-            viewModel.currentRatingImage.value = R.drawable.good_rating
+            viewModel.updateCurrentRating(R.drawable.good_rating)
         }
 
         FragmentRatingbinding.neutralRating.setOnClickListener{
             Timber.d("Neutral rating selected")
-            viewModel.currentRatingImage.value = R.drawable.neutral_rating
+            viewModel.updateCurrentRating(R.drawable.neutral_rating)
         }
 
         FragmentRatingbinding.poorRating.setOnClickListener{
             Timber.d("Poor rating selected")
-            viewModel.currentRatingImage.value = R.drawable.poor_rating
+            viewModel.updateCurrentRating(R.drawable.poor_rating)
         }
     }
 
